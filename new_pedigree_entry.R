@@ -42,11 +42,11 @@ max(df$Pset)*36
 #get current Tid range
 
 con <- dbConnect(RMySQL::MySQL(),
-                 dbname = "ibdbv2_radiatapine_merged",
-                 host = "52.62.43.75",
+                 dbname = Sys.getenv("DB_NAME"),
+                 host = Sys.getenv("DB_HOST"),
                  port = 23306,
-                 user = "mark",
-                 password = "GBPccBAMbz")
+                 user = Sys.getenv("DB_USER"),
+                 password = Sys.getenv("DB_PASSWORD"))
 
 tables <- dbListTables(con)
 
