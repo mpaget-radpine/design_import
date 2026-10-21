@@ -97,11 +97,11 @@ dbDisconnect(con)
 
 #get pedigree
 pedigree_df <- extract_pedigree(
-  db_host = "52.62.43.75",
+  db_host = Sys.getenv("DB_HOST"),
   db_port = 23306,
-  db_name = "ibdbv2_radiatapine_merged",
-  db_user = "mark",
-  db_password = "GBPccBAMbz"
+  db_name = Sys.getenv("DB_NAME"),
+  db_user = Sys.getenv("DB_USER"),
+  db_password = Sys.getenv("PASSWORD")
 )
 
 
@@ -155,11 +155,11 @@ new_ped_entry[new_ped_entry$ENTRY_NO %in% 10,]
 
 #reload pedigree
 pedigree_df <- extract_pedigree(
-  db_host = "52.62.43.75",
+  db_host = Sys.getenv("DB_HOST"),
   db_port = 23306,
-  db_name = "ibdbv2_radiatapine_merged",
-  db_user = "mark",
-  db_password = "GBPccBAMbz"
+  db_name = Sys.getenv("DB_NAME"),
+  db_user = Sys.getenv("DB_USER"),
+  db_password = Sys.getenv("DB_PASSWORD")
 )
 
 #PROGENITORS may have to be add to spreadsheet manually or use code below if Fcln and Mcln are supplied

@@ -37,11 +37,11 @@ nrow(df)==length(unique(df$Tid))
 
 #extract pedigree function if new analysis, then save below
 pedigree_df <- extract_pedigree(
-  db_host = "52.62.43.75",
+  db_host = Sys.getenv("DB_HOST"),
   db_port = 23306,
-  db_name = "ibdbv2_radiatapine_merged",
-  db_user = "mark",
-  db_password = "GBPccBAMbz"
+  db_name = Sys.getenv("DB_NAME"),
+  db_user = Sys.getenv("DB_USER"),
+  db_password = Sys.getenv("DB_PASSWORD")
 )
 
 head(pedigree_df)
